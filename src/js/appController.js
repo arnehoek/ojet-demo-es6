@@ -16,6 +16,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
                     'dashboard': {label: 'Dashboard', isDefault: true},
                     'incidents': {label: 'Incidents'},
                     'customers': {label: 'Customers'},
+                    'students': {label: 'Students'},
                     'about': {label: 'About'}
                 });
                 oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
@@ -31,6 +32,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
                     },
                     {
                         name: 'Customers', id: 'customers',
+                        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
+                    },
+                    {
+                        name: 'Students', id: 'students',
                         iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                     },
                     {

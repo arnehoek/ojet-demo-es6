@@ -1,0 +1,21 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Students</h1>
+    <oj-list-view id="listview" aria-label="list with static data" selection-mode="multiple">
+        <ul data-bind="foreach: people">
+            <li>
+                <div class="container">
+                    <div>
+                        <span class="name" data-bind="text: name"></span>
+                    </div>
+                    <div>
+                        <span class="oj-text-xs oj-text-secondary-color" data-bind="text: role"></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </oj-list-view>
+</div>
