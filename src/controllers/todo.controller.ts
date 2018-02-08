@@ -1,4 +1,4 @@
-import {Get, Controller, Post} from '@nestjs/common';
+import {Get, Controller, Post, Body} from '@nestjs/common';
 import {TodoItem} from '../model/todo-item';
 
 @Controller()
@@ -16,7 +16,7 @@ export class TodoController {
   }
 
   @Post('/todo/add')
-  add(item: TodoItem): TodoItem[] {
+  add(@Body() item: TodoItem): TodoItem[] {
     this.todoItems.push(item);
     return this.todoItems;
   }

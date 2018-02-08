@@ -9,8 +9,12 @@ define(['ojs/ojcore', 'knockout', 'jquery'], (oj, ko, $) => {
 
         class CustomerViewModel {
             constructor() {
-                $.get('http://localhost:3000/todo', items => {
-                    console.log(items);
+                $.post('http://localhost:3000/todo/add', JSON.stringify({naam: 'demo', omschrijving: 'demo item'}), response => {
+                    console.log('response: ', response);
+
+                    $.get('http://localhost:3000/todo', items => {
+                        console.log(items);
+                    });
                 });
             }
         }
