@@ -2,8 +2,23 @@
   "name": "ojet-demo",
   "version": "1.0.0",
   "description": "An Oracle JavaScript Extension Toolkit(JET) web app",
+  "scripts": {
+    "start": "node index.js",
+    "start:watch": "nodemon",
+    "prestart:prod": "tsc",
+    "start:prod": "node dist/main.js"
+  },
   "dependencies": {
-    "@oracle/oraclejet": "~4.1.0"
+    "@oracle/oraclejet": "~4.1.0",
+    "@nestjs/common": "^4.5.9",
+    "@nestjs/core": "^4.5.10",
+    "@nestjs/microservices": "^4.5.8",
+    "@nestjs/testing": "^4.5.5",
+    "@nestjs/websockets": "^4.5.8",
+    "redis": "^2.7.1",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.5.6",
+    "typescript": "^2.6.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -11,7 +26,10 @@
     "load-grunt-config": "0.19.2",
     "@oracle/oraclejet-tooling": "~4.1.0",
     "qunit-reporter-junit": "^1.1.1",
-    "qunitjs": "^2.3.3"
+    "qunitjs": "^2.3.3",
+    "@types/node": "^9.3.0",
+    "nodemon": "^1.14.1",
+    "ts-node": "^4.1.0"
   },
   "engines": {
     "node": ">=0.10.0"
