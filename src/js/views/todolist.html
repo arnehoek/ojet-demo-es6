@@ -5,14 +5,14 @@
 <div class="oj-hybrid-padding">
   <h1>Todo lijst</h1>
     <oj-list-view id="listview" aria-label="list with static data" selection-mode="multiple">
-        <ul data-bind="foreach: people">
+        <ul data-bind="foreach: todoItems">
             <li>
                 <div class="container">
                     <div>
-                        <span class="name" data-bind="text: name"></span>
+                        <b><span class="name" data-bind="text: name"></span></b>
                     </div>
                     <div>
-                        <span class="oj-text-xs oj-text-secondary-color" data-bind="text: role"></span>
+                        <span class="oj-text-xs oj-text-secondary-color" data-bind="text: description"></span>
                     </div>
                 </div>
             </li>

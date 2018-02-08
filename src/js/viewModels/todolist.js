@@ -5,25 +5,18 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview'], (oj, ko, $) => {
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview', '../datasource'], (oj, ko, $, dummy, ds ) => {
   
     class TodolistViewModel {
 
         constructor() {
-            this.people = ko.observableArray([
-                {
-                    name: 'James',
-                    role: 'Oracle Expert'
-                },
-                {
-                    name: 'Jones',
-                    role: 'Oracle Expert'
-                },
-                {
-                    name: 'Jeremy',
-                    role: 'Oracle Expert'
-                }
-            ]);
+
+            console.log('TodolistViewModel constructor');
+
+            this.todoItems = ko.observableArray( ds.todolist );
+
+            console.log('TodolistViewModel constructor 2');
+
         }
 
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
