@@ -47,7 +47,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
                 // Header
                 // Application Name used in Branding Area
-                this.appName = ko.observable("App Name");
+                this.appName = ko.observable("Our first JET To Do list");
                 // User Info used in Global Navigation area
                 this.userLogin = ko.observable("john.hancock@oracle.com");
 
