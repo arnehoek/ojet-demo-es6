@@ -7,7 +7,7 @@
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview'], (oj, ko, $) => {
   
-    class StudentsViewModel {
+    class TodolistViewModel {
 
         constructor() {
             this.people = ko.observableArray([
@@ -88,6 +88,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview'], (oj, ko, $) => {
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new StudentsViewModel();
+    return new TodolistViewModel();
   }
 );
