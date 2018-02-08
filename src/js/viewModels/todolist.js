@@ -5,8 +5,10 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview', '../datasource'], (oj, ko, $, dummy, ds ) => {
-  
+define(['ojs/ojcore', 'knockout', 'jquery', '../datasource', 'ojs/ojknockout', 'promise', 'ojs/ojinputtext', 'ojs/ojinputnumber', 'ojs/ojtable', 'ojs/ojarraydataprovider', 'ojs/ojlabel'], (oj, ko, $, ds ) => {
+
+
+
     class TodolistViewModel {
 
         constructor() {
@@ -17,7 +19,28 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview', '../datasource'], 
 
             console.log('TodolistViewModel constructor 2');
 
+            this.selectedItems = ko.observableArray([]);
+
+            ds.todolist.push({name: 'x', description: 'y'});
+
+            $.get('http://localhost:3000/todo', items => {
+                //this.todoItems(items.map(item => ({name: item.naam, description: item.omschrijving})).filter(item => item.name === 'item 1'));
+                this.todoItems(items.map(item => ({name: item.naam, description: item.omschrijving})));
+            });
+
+            console.log('TodolistViewModel this.todoItems :  ', this.todoItems );
+
+            this.dataProvider = new oj.ArrayDataProvider(this.todoItems, {idAttribute: 'name'});
+
+            console.log('TodolistViewModel this.dataProvider :  ', this.dataProvider );
+
+            this.renderer = function(context)
+            {
+                return {'insert':context['data']['name']};
+            };
+
         }
+
 
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
@@ -83,4 +106,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview', '../datasource'], 
      */
     return new TodolistViewModel();
   }
+
+
 );
